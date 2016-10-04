@@ -1,3 +1,4 @@
+"use strict";
 var app = angular.module('app', ['ui.router', 'restangular']);
 
 
@@ -17,20 +18,24 @@ app.config(
   }]);
 
 app.config(['RestangularProvider', function(RestangularProvider){
-
-
-
+  RestangularProvider.setBaseUrl('/api/v1');
+  RestangularProvider.setRequestSuffix('.json');
 }]);
 
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise('/')
+  $urlRouterProvider.otherwise('/messages');
 
   $stateProvider
     .state('messages', {
-        templateUrl: 'template/messages/index.html',
-        controller: MessagesCtrl,
-    })
+        url: '/messages',
+        views:{
+          'messages': {
+            templateUrl: 'templates/messages/index.html',
+            controller: 'MessagesCtrl'   
+          }
+        }
+    });
 
-}])
+}]);
