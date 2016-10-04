@@ -18,6 +18,6 @@
 
 //= require angular
 //= require angular-ui-router
-//= require rectangular
+//= require restangular
 
 //= require_tree .
