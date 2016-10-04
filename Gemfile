@@ -18,6 +18,10 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'angularjs-rails'
 gem 'angular_rails_csrf'
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'json'
+end
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
