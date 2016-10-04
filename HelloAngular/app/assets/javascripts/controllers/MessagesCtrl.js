@@ -1,3 +1,5 @@
-MyApp.controller('MessagesCtrl', ['$scope', function($scope) {
-  
+MyApp.controller('MessagesCtrl', ['$scope', "Restangular", function($scope, Restangular) {
+
+  $scope.messages = Restangular.all('messages').getList().$object;
+
 }]);

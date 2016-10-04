@@ -5,7 +5,11 @@ MyApp.factory('_', ['$window', function($window) {
 }]);
 
 
-MyApp.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
+
+MyApp.config(["$stateProvider", "$urlRouterProvider", "RestangularProvider", function($stateProvider, $urlRouterProvider, RestangularProvider) {
+  
+  RestangularProvider.setBaseUrl('/api/v1');
+  RestangularProvider.setRequestSuffix('.json');
 
   $urlRouterProvider.otherwise("/messages")
 
