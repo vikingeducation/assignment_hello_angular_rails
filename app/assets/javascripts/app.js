@@ -19,15 +19,15 @@ helloApp.config(
       .common['X-CSRF-Token'] = token;
 }]);
 
-// // restangular
+// restangular
 
-// helloApp.config(
-//   ['RestangularProvider',
-//   function(RestangularProvider) {
+helloApp.config(
+  ['RestangularProvider',
+  function(RestangularProvider) {
 
-//     RestangularProvider.setBaseUrl('/api/v1');
-//     RestangularProvider.setRequestSuffix('.json');
-//   }]);
+    RestangularProvider.setBaseUrl('/api/v1');
+    RestangularProvider.setRequestSuffix('.json');
+  }]);
 
 helloApp.config(
   ['$stateProvider', '$urlRouterProvider',
