@@ -1,10 +1,15 @@
-var helloApp = angular.module('helloApp', ['ui.router', 'restangular'])
+var helloApp = angular.module('helloApp', ['ui.router', 'restangular']);
 
 helloApp.factory('_', ['$window', function($window) {
   return $window._;
 }]);
 
-helloApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+helloApp.config(['$stateProvider', '$urlRouterProvider', 'RestangularProvider',
+function($stateProvider, $urlRouterProvider, RestangularProvider){
+
+  // Restangular
+  RestangularProvider.setBaseUrl('/api/v1');
+  RestangularProvider.setRequestSuffix('.json');
 
   $urlRouterProvider.otherwise('/messages');
 
@@ -19,11 +24,6 @@ helloApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
     });
 }]);
 
-helloApp.controller('MessagesCtrl', ['$scope', function($scope){
-
-  $scope.hello = 'HELLO WORLD';
-
-}]);
 
 helloApp.run(function($rootScope){
   $rootScope.$on("$stateChangeError", console.log.bind(console));
