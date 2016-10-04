@@ -1,4 +1,24 @@
-# assignment_hello_angular_rails
-Setting up your first Angular on Rails application
+# README
 
-[An assignment on setting up an Angular on Rails application with UI-Router and Restangular from Viking Code School](https://www.vikingcodeschool.com)
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
