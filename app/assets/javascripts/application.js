@@ -11,6 +11,10 @@
 // about supported directives.
 //
 //= require angular
+//= require angular-ui-router.min.js
+//= require lodash.js
+//= require restangular.js
+
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
