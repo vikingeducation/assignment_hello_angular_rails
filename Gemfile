@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'angularjs-rails'
+gem 'angular_rails_csrf'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
