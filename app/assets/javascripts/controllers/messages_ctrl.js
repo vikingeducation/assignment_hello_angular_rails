@@ -1,4 +1,4 @@
-MyApp.controller('MessagesCtrl', ['$scope', '$stateParams',
-  function($scope, $stateParams ) {
-    $scope.message = "Hello World!";
+MyApp.controller('MessagesCtrl', ['$scope', '$stateParams', 'Restangular',
+  function($scope, $stateParams, Restangular) {
+    $scope.messages = Restangular.all('messages').getList().$object;
 }]);

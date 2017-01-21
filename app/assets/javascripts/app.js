@@ -16,6 +16,15 @@ MyApp.config(
   }]
 );
 
+MyApp.config(
+  ['RestangularProvider',
+  function(RestangularProvider) {
+
+    RestangularProvider.setBaseUrl('/api/v1');
+    RestangularProvider.setRequestSuffix('.json');
+
+}]);
+
 MyApp.run(function($rootScope){
   $rootScope.$on("$stateChangeError", console.log.bind(console));
 });
