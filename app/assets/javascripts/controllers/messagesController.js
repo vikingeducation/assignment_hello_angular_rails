@@ -1,4 +1,3 @@
-App.controller('MessagesCtrl', ['$scope', function($scope){
-  $scope.message = "Hello Farruh"
-  console.log("Fuck It");
+App.controller('MessagesCtrl', ['$scope', '$http', 'Restangular', function($scope, $http, Restangular){
+    $scope.messages = Restangular.all('messages').getList().$object;
 }]);

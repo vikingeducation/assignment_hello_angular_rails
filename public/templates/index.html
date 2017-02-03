@@ -1,2 +1,4 @@
 Hello Angular on Rails!
-<h3> {{ message }}</h3>
+<div ng-repeat="message in messages">
+   ID: {{ message.id }}, message: {{ message.message }}
+</div>
