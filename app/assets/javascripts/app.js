@@ -4,8 +4,6 @@ myApp.factory('_', ['$window', function($window) {
   return $window._;
 }]);
 
-console.log('askdf')
-
 myApp.config(
   ["$stateProvider", "$urlRouterProvider", 
   function($stateProvider, $urlRouterProvider) {
