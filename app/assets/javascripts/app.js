@@ -5,6 +5,15 @@ myApp.factory('_', ['$window', function($window) {
 }]);
 
 myApp.config(
+  ['RestangularProvider',
+  function(RestangularProvider) {
+
+    RestangularProvider.setBaseUrl('/api/v1');
+    RestangularProvider.setRequestSuffix('.json');
+
+  }]);
+
+myApp.config(
   ["$stateProvider", "$urlRouterProvider", 
   function($stateProvider, $urlRouterProvider) {
 
