@@ -1,11 +1,13 @@
 var MyApp = angular.module('MyApp', ['ui.router', 'restangular']);
 
 
+MyApp.factory('_', ['$window', function($window) {
+  return $window._;
+}]);
 
 
 MyApp.config(function($stateProvider, $urlRouterProvider) {
-
-  $urlRouterProvider.otherwise("");
+  // $urlRouterProvider.otherwise("");
 
   $stateProvider
     .state('default', {
@@ -21,6 +23,15 @@ MyApp.config(function($stateProvider, $urlRouterProvider) {
 });
 
 
+MyApp.config(
+  ['RestangularProvider',
+  function(RestangularProvider) {
+
+    RestangularProvider.setBaseUrl('/api/v1');
+    RestangularProvider.setRequestSuffix('.json');
+
+  }]);
+
 
 
 MyApp.controller('TestCtrl', ['$scope', function($scope){
@@ -29,10 +40,10 @@ MyApp.controller('TestCtrl', ['$scope', function($scope){
 
 
 
-MyApp.controller('MessagesCtrl', ['$scope', function($scope){
+MyApp.controller('MessagesCtrl', ['$scope', 'Restangular', function($scope, Restangular){
 
   $scope.hello = 'hello';
-
+  $scope.messages = Restangular.all('messages').getList().$object;
 }]);
 
 

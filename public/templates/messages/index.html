@@ -1,3 +1,10 @@
 public/templates/messages.html !!
 
 {{ hello }}
+<hr>
+<ul>
+  <li ng-repeat="message in messages">
+    {{ message['message'] }}
+  </li>
+</ul>
+{{ messages }}
